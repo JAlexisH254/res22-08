@@ -41,7 +41,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40dp"
-                android:background="#D8D8D8"
+                android:background="#CACACA"
                 android:text="C" />
 
             <Button
@@ -50,7 +50,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40dp"
-                android:background="#D8D8D8"
+                android:background="#CACACA"
                 android:text="( )" />
 
             <Button
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40dp"
-                android:background="#D8D8D8"
+                android:background="#CACACA"
                 android:text="%" />
 
             <Button
