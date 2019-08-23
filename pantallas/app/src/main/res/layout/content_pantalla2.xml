@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Pantalla2"
+    tools:showIn="@layout/activity_pantalla2">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="217dp"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Un mar es una masa de agua salada de tamaño menor que el océano, así como también el conjunto de la masa de agua salada que cubre la mayor parte de la superficie del planeta Tierra, incluyendo océanos y mares menores.
+                    El término mar también se utiliza para designar algunos grandes lagos salobres, como el mar Caspio, el mar Muerto o el mar de Aral. Se habla entonces de mar cerrado o interior, pero el término correcto es lago endorreico.
+                    Ateniéndose al uso que de ella se hace, cabe observar que la gente de mar y los poetas tienden a atribuirle el género femenino (la mar). Fuera de esos dos ámbitos, se ha generalizado el uso masculino de la palabra («el mar»). El Día Marítimo Mundial es el 26 de septiembre." />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
