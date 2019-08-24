@@ -7,25 +7,33 @@
     tools:context=".pantalla2">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="347dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <ImageView android:scaleType="center"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:layout_height="208dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/descarga" />
 
         <TextView
             android:id="@+id/textView2"
+            android:layout_weight="0.5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:textSize="35sp"
-            android:text="De acuerdo a Greimas, es un enunciado ya sea gráfico o fónico que nos permite visualizar las palabras que escuchamos y que es utilizado para manifestar el proceso lingüístico. Mientras Hjelmslev usa ese término para designar el todo de una cadena lingüística ilimitada" />
+
+            android:text="Un mar es una masa de agua salada de tamaño menor que el océano, así como también el conjunto de la masa de agua salada que cubre la mayor parte de la superficie del planeta Tierra, incluyendo océanos y mares menores."
+            android:textSize="25sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
