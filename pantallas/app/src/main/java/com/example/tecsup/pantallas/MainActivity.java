@@ -28,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(MainActivity.this, pantalla2.class);
+                startActivity(a);
+            }
+        });
+
         btn03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(MainActivity.this, Pantalla4.class);
+                startActivity(a);
+            }
+        });
+
+        btn05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(MainActivity.this, pantalla5.class);
                 startActivity(a);
             }
         });

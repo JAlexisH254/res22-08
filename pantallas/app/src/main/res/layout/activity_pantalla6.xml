@@ -26,7 +26,7 @@
                 android:text="TextView"
                 android:gravity="right"
                 android:background="#000"
-                android:textSize="40dp" />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -35,41 +35,41 @@
             android:layout_weight="0.2"
             android:orientation="horizontal">
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#CACACA"
                 android:text="C" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#CACACA"
                 android:text="( )" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#CACACA"
                 android:text="%" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button10"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#FF8300"
-                android:text="/" />
+                android:text="/"/>
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="7" />
 
             <Button
@@ -91,6 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="40sp"
                 android:text="8" />
 
             <Button
@@ -98,15 +99,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="9" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button14"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#FF8300"
                 android:text="+" />
         </LinearLayout>
@@ -122,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="4" />
 
             <Button
@@ -130,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="5" />
 
             <Button
@@ -138,15 +139,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="6" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button15"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#FF8300"
                 android:text="-" />
         </LinearLayout>
@@ -163,7 +164,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
 
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="1" />
 
             <Button
@@ -171,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="2" />
 
             <Button
@@ -179,15 +180,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="3" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button17"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:background="#FF8300"
                 android:text="X" />
         </LinearLayout>
@@ -202,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="." />
 
             <Button
@@ -210,7 +211,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:text="0" />
 
             <Button
@@ -221,7 +222,7 @@
                 android:textSize="40dp"
                 android:text="+ -" />
 
-            <Button
+            <Button style="@android:style/ButtonBar"
                 android:id="@+id/button24"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
