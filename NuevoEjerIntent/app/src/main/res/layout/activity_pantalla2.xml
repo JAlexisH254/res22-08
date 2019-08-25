@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B9B9B9"
+    tools:context=".Pantalla2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_weight="0.8"
+        android:background="#B9B9B9"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#6A6A6A"
+            android:text="Nombres"
+            android:textAlignment="center"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txt_n"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#969595"
+            android:gravity="center"
+            android:text=""
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#6A6A6A"
+            android:text="Apellido Paterno"
+            android:textAlignment="center"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txt_ap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#969595"
+            android:gravity="center"
+            android:text=""
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#6A6A6A"
+            android:text="Apellido Materno"
+            android:textAlignment="center"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txt_am"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#969595"
+            android:gravity="center"
+            android:text=""
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

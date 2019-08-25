@@ -1,5 +1,6 @@
 package com.example.tecsup.nuevoejerintent;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,19 +18,21 @@ import java.net.URLConnection;
 public class MainActivity extends AppCompatActivity {
     EditText et_dni;
     Button btn_buscar;
-    TextView txt_nombre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         et_dni = findViewById(R.id.et_dni);
         btn_buscar = findViewById(R.id.btn_buscar);
-        txt_nombre = findViewById(R.id.txt_nombre);
 
         btn_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txt_nombre.setText(Funxion_Dni(String.valueOf(et_dni.getText().toString())));
+                Intent intent = new Intent(MainActivity.this, Pantalla2.class);
+                intent.putExtra("nombre",Funxion_Dni(String.valueOf(et_dni.getText().toString())));
+
+                startActivity(intent);
             }
         });
 

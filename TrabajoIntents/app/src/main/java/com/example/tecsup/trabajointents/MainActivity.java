@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Bienvenida.class);
-                intent.putExtra("nombre",et_nombre.getText());
+                intent.putExtra("NOMBRE",et_nombre.getText().toString());
                 startActivity(intent);
             }
         });

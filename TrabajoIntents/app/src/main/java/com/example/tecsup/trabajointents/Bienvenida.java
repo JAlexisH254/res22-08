@@ -14,10 +14,8 @@ public class Bienvenida extends AppCompatActivity {
         setContentView(R.layout.activity_bienvenida);
         txt_respuesta = findViewById(R.id.txt_respuesta);
 
-        Intent intent = new Intent();
-        String nombre = intent.getStringExtra("nombre");
-        txt_respuesta.setText(nombre);
-
-
+        Intent intent = getIntent();
+        String nombre = intent.getStringExtra("NOMBRE");
+        txt_respuesta.setText(nombre.toUpperCase());
     }
 }
