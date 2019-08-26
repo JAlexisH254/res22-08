@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,10 +30,16 @@ public class MainActivity extends AppCompatActivity {
         btn_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Pantalla2.class);
-                intent.putExtra("nombre",Funxion_Dni(String.valueOf(et_dni.getText().toString())));
-
-                startActivity(intent);
+                String buscar = "DNI";
+                String respuesta = Funxion_Dni(String.valueOf(et_dni.getText().toString()));
+                boolean resultado = respuesta.contains(buscar);
+                if(resultado){
+                    Toast.makeText(MainActivity.this,"DNI no encontrado en Padrón Electoral",Toast.LENGTH_LONG).show();
+                }else {
+                    Intent intent = new Intent(MainActivity.this, Pantalla2.class);
+                    intent.putExtra("nombre", respuesta);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -65,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             return resultado;
 
         }catch (IOException ex){
-            return resultado = "no se encontro";
+            return resultado = null;
         }
     }
 }
