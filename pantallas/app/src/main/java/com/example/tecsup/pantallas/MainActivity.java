@@ -28,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn02.setOnClickListener(new View.OnClickListener() {
+        /*btn02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(MainActivity.this, pantalla2.class);
                 startActivity(a);
             }
-        });
+        });*/
 
         btn03.setOnClickListener(new View.OnClickListener() {
             @Override
