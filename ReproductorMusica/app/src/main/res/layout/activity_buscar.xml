@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Buscar">
+
+    <EditText
+        android:id="@+id/et_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:focusableInTouchMode="true"
+        android:hint="Buscar artistas, canciones y playlist"
+        android:drawableLeft="@drawable/ic_action_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="#2D2D2D"
+        android:id="@+id/rv_genero"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_buscar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
