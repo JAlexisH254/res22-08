@@ -13,7 +13,7 @@
         android:ems="20"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        android:focusableInTouchMode="true"
+        android:focusable="false"
         android:hint="Buscar artistas, canciones y playlist"
         android:drawableLeft="@drawable/ic_action_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:background="#2D2D2D"
+        android:background="#2C2C2C"
         android:id="@+id/rv_genero"
         android:layout_width="match_parent"
         android:layout_height="0dp"
