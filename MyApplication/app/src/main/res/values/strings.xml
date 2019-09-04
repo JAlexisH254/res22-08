@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string-array name="aves">
+        <item>Gorrión</item>
+        <item>Paucar</item>
+        <item>Colibri</item>
+        <item>Paloma</item>
+        <item>Garza</item>
+    </string-array>
+</resources>
+
+
+
