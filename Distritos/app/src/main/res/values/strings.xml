@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Distritos</string>
+    <string-array name="provincias">
+        <item>Arequipa</item>
+        <item>Camana</item>
+    </string-array>
+
+    <string-array name="Arequipa">
+        <item>ALTO_SELVA_ALEGRE</item>
+        <item>AREQUIPA</item>
+        <item>CAYMA</item>
+        <item>CERRO_COLORADO</item>
+        <item>CHARACATO</item>
+        <item>CHIGUATA</item>
+        <item>JACOBO HUNTER</item>
+        <item>JOSÉ LUIS BUSTAMANTE Y RIVERO</item>
+        <item>LA JOYA</item>
+        <item>MARIANO MELGAR</item>
+        <item>MIRAFLORES</item>
+        <item>MOLLEBAYA</item>
+        <item>PAUCARPATA</item>
+        <item>POCSI</item>
+        <item>POLOBAYA</item>
+        <item>QUEQUEÑA</item>
+        <item>SABANDÍA</item>
+        <item>SACHACA</item>
+        <item>SAN JUAN DE SIGUAS</item>
+        <item>SAN JUAN DE TARUCANI</item>
+        <item>SANTA ISABEL DE SIGUAS</item>
+        <item>SANTA RITA DE SIGUAS</item>
+        <item>SOCABAYA</item>
+        <item>TIABAYA</item>
+        <item>UCHUMAYO</item>
+        <item>VITOR</item>
+        <item>YANAHUARA</item>
+        <item>YARABAMBA</item>
+        <item>YURA</item>
+    </string-array>
+
+    <string-array name="Camana">
+        <item>CAMANÁ</item>
+        <item>JOSÉ MARÍA QUIMPER</item>
+        <item>MARIANO NICOLÁS VALCÁRCEL</item>
+        <item>MARISCAL CÁCERES</item>
+        <item>NICOLÁS DE PIÉROLA</item>
+        <item>OCOÑA</item>
+        <item>QUILCA</item>
+        <item>SAMUEL PASTOR</item>
+    </string-array>
+</resources>
