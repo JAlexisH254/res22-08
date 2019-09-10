@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 Map<String, String>  params = new HashMap<String, String>();
                 params.put("Accept", "application/json");
                 params.put("Content-Type", "application/json");
-                params.put("Authorization", "Bearer BQD2MmS0I-EzjiqYRD_513y-OYjJcW0uyokx_mdKk7pe6wgJPqETmTndCgz6QhvjTxVaDz0bnA6Fb3wjN_TQ5DWlzh--mFkYvvm-FDt1o1MdTkiJFgTNESX7qYn8yjaacfQe5kO8-kjmyNzYtmBYcgI_Pg");
+                params.put("Authorization", "Bearer BQCUYwyAWZ0ipqIEpBlTdGCJ7CXm6L8vaJ80AFQ-Zttb2AeV3RuZvUUKQ2nxkcsDafNAakHdyi9IngjUXWPo2TxW_33njLhWHTD79ClZRLsCCi94RnXVjIAjl27pi1GoaY1JBDMUJdKPvByC5eozuUXESA");
 
                 return params;
             }
