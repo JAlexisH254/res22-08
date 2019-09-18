@@ -14,7 +14,7 @@ import java.util.List;
 public class adapter_album extends RecyclerView.Adapter<Item_holder> {
     List<Album> datos;
     LayoutInflater inflater;
-
+    Context context;
     public adapter_album(List<Album> datos, Context context) {
         inflater = LayoutInflater.from(context);
         this.datos = datos;
@@ -31,7 +31,7 @@ public class adapter_album extends RecyclerView.Adapter<Item_holder> {
     public void onBindViewHolder(@NonNull Item_holder item_holder, int i) {
         item_holder.titulo.setText(datos.get(i).getTitulo());
         item_holder.fecha.setText(datos.get(i).getFecha_lansamiento());
-        Glide.with(Context).load(datos.get(i).getImagen()).into(item_holder.imageView);
+        Glide.with(context).load(datos.get(i).getImagen()).into(item_holder.imageView);
     }
 
     @Override
