@@ -32,11 +32,10 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     JSONArray libros;
-    TextView ejemplo;
     Button buscar;
     EditText busqueda;
 
-    ArrayList<String> titulos;
+    List<String> titulos;
     ArrayAdapter<String> arrayAdapter;
     ListView lv;
 
@@ -44,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ejemplo = findViewById(R.id.ejemplo);
         buscar = findViewById(R.id.buscar);
         busqueda = findViewById(R.id.termino);
         lv = findViewById(R.id.lista);
-        arrayAdapter = new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_list_item_1,titulos);
+
+        titulos = new ArrayList<>();
+        arrayAdapter = new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_list_item_activated_1,titulos);
         lv.setAdapter(arrayAdapter);
+
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,15 +90,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void LlenarLibros(JSONArray i){
         libros = i;
-        try {
-            for (int a =0;a<10;a++){
-                    String titulo = i.getJSONObject(a).getJSONObject("volumeInfo").getString("title");
-                    titulos.add(titulo);
+        for (int a = 0;a<i.length();a++){
+            String titulo = null;
+            try {
+                titulo = i.getJSONObject(a).getJSONObject("volumeInfo").getString("title");
+                titulos.add(titulo);
+            } catch (JSONException e) {}
+            Toast.makeText(this,titulo,Toast.LENGTH_SHORT).show();
 
-            }
-            arrayAdapter.notifyDataSetChanged();
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
+        arrayAdapter.notifyDataSetChanged();
     }
 }
