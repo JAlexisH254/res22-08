@@ -4,6 +4,10 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -13,13 +17,19 @@ import java.util.Scanner;
 
 public class TastCargarLibros extends AsyncTask<URL,Integer,String> {
     Context context;
+    MainActivity actividad;
+    public TastCargarLibros(Context context) {
+        this.context = context;
+        actividad = (MainActivity) context;
+    }
+
     @Override
     protected String doInBackground(URL... urls) {
         HttpURLConnection conn = null;
         try{
             conn = (HttpURLConnection) urls[0].openConnection();
-            conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(15000 /* milliseconds */);
+            conn.setReadTimeout(20000 /* milliseconds */);
+            conn.setConnectTimeout(20000 /* milliseconds */);
             conn.setRequestMethod("GET");
             conn.setDoInput(true);
             conn.connect();
@@ -36,8 +46,19 @@ public class TastCargarLibros extends AsyncTask<URL,Integer,String> {
     }
 
     @Override
+    protected void onProgressUpdate(Integer... values) {
+        super.onProgressUpdate(values);
+    }
+
+    @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        Toast.makeText(context,s, Toast.LENGTH_SHORT).show();
+        try{
+            JSONObject objeto = new JSONObject(s);
+            JSONArray libros = objeto.getJSONArray("items");
+            actividad.LlenarLibros(libros);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
