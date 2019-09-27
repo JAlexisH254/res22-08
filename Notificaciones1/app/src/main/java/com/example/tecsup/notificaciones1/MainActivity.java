@@ -12,19 +12,31 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Button b;
     NotificationManager notificationManager;
     NotificationReceiver not;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        b = findViewById(R.id.button);
+
         not = new NotificationReceiver();
         registerReceiver(not,new IntentFilter("putoelquelolea")); //com.android.Notificaciones1
         CrearCanalDeNotificaciones();
-        CrearNotificacion();
+
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CrearNotificacion();
+            }
+        });
     }
 
     void CrearCanalDeNotificaciones(){
@@ -49,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 .setContentTitle("pimera notifacion")
                 .setContentText("notificacion codigo");
         builder.addAction(new NotificationCompat.Action(R.drawable.ic_launcher_background,"Apretame",updatePendingIntent));
+        builder.setStyle(new NotificationCompat.BigTextStyle().bigText("Esto es un texxto de prueba" +
+                "Esto es un texxto de prueba"+
+                "Esto es un texxto de prueba"+
+                "Esto es un texxto de prueba"+
+                "Esto es un texxto de prueba").setBigContentTitle("Hola que tal como estas"));
         notificationManager.notify(0,builder.build());
     }
 
@@ -57,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Toast.makeText(context,"Me apreto", Toast.LENGTH_SHORT).show();
+            notificationManager.cancel(0);
         }
     }
 }
