@@ -2,9 +2,9 @@ package com.example.tecsup.retrofit.Adaptador;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,6 +16,7 @@ public class PokedexHolder extends RecyclerView.ViewHolder {
     TextView nombrePokemon;
     Context context;
     CardView cv;
+    int id;
     public PokedexHolder(@NonNull View itemView, Context c) {
         super(itemView);
         this.context = c;
@@ -25,6 +26,7 @@ public class PokedexHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent((MainActivity) context,Detalle_Pokemon.class);
+                intent.putExtra("codigo_pokemon",id);
                 context.startActivity(intent);
             }
         });
