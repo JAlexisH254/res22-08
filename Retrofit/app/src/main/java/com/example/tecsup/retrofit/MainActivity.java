@@ -1,10 +1,12 @@
 package com.example.tecsup.retrofit;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import java.util.List;
+
+import com.example.tecsup.retrofit.Adaptador.Pokedex_Adaptador;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,41 +15,39 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-
+    RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recyclerView = findViewById(R.id.recycler);
+        CargarPokedex();
+    }
+
+    void CargarPokedex(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        InterfaceGitHub inter = retrofit.create(InterfaceGitHub.class);
-        Call<List<Pokemon>> i = inter.listPokemon("ditto");
-        i.enqueue(new Callback<List<Pokemon>>() {
+        InterfacePokemon inter = retrofit.create(InterfacePokemon.class);
+        Call<Pokedex> servicio = inter.obtenerPokedex(151);
+        servicio.enqueue(new Callback<Pokedex>() {
             @Override
-            public void onResponse(Call<List<Pokemon>> call, Response<List<Pokemon>> response) {
-                Log.e("poke",response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<Pokemon>> call, Throwable t) {
-
-            }
-        });
-        /*i.enqueue(new Callback<List<Pokemon>>() {
-            @Override
-            public void onResponse(Call<List<Pokemon>> call, Response<List<Pokemon>> response) {
-                Log.e("Respuesta",String.valueOf(response.code()));
-                for (Repo r : response.body()){
-                    Log.e("respuesta",r.getOwner().login);
+            public void onResponse(Call<Pokedex> call, Response<Pokedex> response) {
+                switch (response.code()){
+                    case 200:
+                        Pokedex pokedex = response.body();
+                        Pokedex_Adaptador pokedex_adaptador = new Pokedex_Adaptador(MainActivity.this,R.layout.item_pokedex,pokedex.results);
+                        recyclerView.setAdapter(pokedex_adaptador);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                        break;
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Repo>> call, Throwable t) {
+            public void onFailure(Call<Pokedex> call, Throwable t) {
 
             }
-        });*/
+        });
     }
 }

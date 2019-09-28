@@ -10,6 +10,4 @@ public interface InterfaceGitHub {
     @GET("users/{user}/repos")
     Call<List<Repo>> listRepos(@Path("user") String user);
 
-    @GET("pokemon/{pokemon}/")
-    Call<List<Pokemon>> listPokemon(@Path("pokemon") String pokemon);
 }
