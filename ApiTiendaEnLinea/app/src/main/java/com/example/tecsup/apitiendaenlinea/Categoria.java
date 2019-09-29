@@ -1,6 +1,8 @@
 package com.example.tecsup.apitiendaenlinea;
 
-public class Categoria {
+import java.util.List;
+
+class Categoria {
     int id;
     String descripcion;
     String imagen_banner;
@@ -67,4 +69,5 @@ public class Categoria {
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
+
 }

@@ -9,5 +9,5 @@ import retrofit2.http.Query;
 public interface Interface_Tienda {
 
     @GET("categorias/")
-    Call<List<Categorias>> listCategorias(@Query("format") String format);
+    Call<List<Categoria>> listCategorias(@Query("format") String format);
 }

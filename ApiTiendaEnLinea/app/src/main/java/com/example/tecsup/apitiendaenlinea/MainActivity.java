@@ -25,18 +25,19 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://viveyupi.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         Interface_Tienda interface_tienda = retrofit.create(Interface_Tienda.class);
-         Call<List<Categorias>> servicio = interface_tienda.listCategorias("JSON");
-        servicio.enqueue(new Callback<List<Categorias>>() {
+         Call<List<Categoria>> servicio = interface_tienda.listCategorias("JSON");
+        servicio.enqueue(new Callback<List<Categoria>>() {
             @Override
-            public void onResponse(Call<List<Categorias>> call, Response<List<Categorias>> response) {
-                List<Categorias> categ = response.body();
+            public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+                List<Categoria> categ = response.body();
                 Log.e("Cat", categ.get(0).descripcion);
             }
 
             @Override
-            public void onFailure(Call<List<Categorias>> call, Throwable t) {
-
+            public void onFailure(Call<List<Categoria>> call, Throwable t) {
+                Log.e("error", "Unable to submit post to API.");
             }
         });
     }

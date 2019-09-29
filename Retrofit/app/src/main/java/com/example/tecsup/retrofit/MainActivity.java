@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void CargarPokedex(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://pokeapi.co/api/v2/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("https://pokeapi.co/api/v2/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
         InterfacePokemon inter = retrofit.create(InterfacePokemon.class);
         Call<Pokedex> servicio = inter.obtenerPokedex(151);
         servicio.enqueue(new Callback<Pokedex>() {
