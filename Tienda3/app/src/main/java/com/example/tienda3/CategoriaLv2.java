@@ -2,9 +2,9 @@ package com.example.tienda3;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.tienda3.Adaptador.CategoriaAparter;
@@ -17,35 +17,30 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
-    RecyclerView rv;
+public class CategoriaLv2 extends AppCompatActivity {
+    RecyclerView rv2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-        rv =findViewById(R.id.lista);
+        setContentView(R.layout.activity_categoria_lv2);
+        rv2 = findViewById(R.id.lista2);
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("id_categoria",0);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://viveyupi.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        Interface_Categoria ic =retrofit.create(Interface_Categoria.class);
-        Call<List<Categoria>> servicio = ic.listCategorias("json");
 
-
+        Interface_Categoria2 ic2 = retrofit.create(Interface_Categoria2.class);
+        Call<List<Categoria>> servicio = ic2.listCategorias2(id);
         servicio.enqueue(new Callback<List<Categoria>>() {
             @Override
             public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
-                switch (response.code()){
-                    case 200:
-                        List<Categoria> categoria = response.body();
-                        CategoriaAparter categoriaAparter=
-                                new CategoriaAparter(MainActivity.this, R.layout.item_categoria,categoria);
-                        rv.setAdapter(categoriaAparter);
-                        rv.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
-                        break;
-                }
+                List<Categoria> categoria = response.body();
+                CategoriaAparter categoriaAparter= new CategoriaAparter(CategoriaLv2.this, R.layout.item_categoria,categoria);
+                rv2.setAdapter(categoriaAparter);
+                rv2.setLayoutManager(new GridLayoutManager(CategoriaLv2.this,2));
             }
 
             @Override

@@ -39,6 +39,7 @@ public class CategoriaAparter extends RecyclerView.Adapter<CategoriaHolder> {
         Categoria categoria = datos.get(position);
         holder.nombreCategoria.setText(categoria.getDescripcion());
         Glide.with(context).load(categoria.getImagen_cuadrada()).into(holder.imagenCategoria);
+        holder.id = datos.get(position).getId();
     }
 
     @Override
