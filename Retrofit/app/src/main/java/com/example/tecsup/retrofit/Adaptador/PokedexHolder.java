@@ -26,7 +26,7 @@ public class PokedexHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent((MainActivity) context,Detalle_Pokemon.class);
-                intent.putExtra("codigo_pokemon",id);
+                intent.putExtra("codigo_pokemon",nombrePokemon.getText().toString());
                 context.startActivity(intent);
             }
         });

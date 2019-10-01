@@ -23,6 +23,7 @@ public class CategoriaLv2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria_lv2);
+        getSupportActionBar().hide();
         rv2 = findViewById(R.id.lista2);
         Intent intent = getIntent();
         int id = intent.getIntExtra("id_categoria",0);

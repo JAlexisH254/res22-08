@@ -29,10 +29,10 @@ public class Detalle_Pokemon extends AppCompatActivity {
         nombre = findViewById(R.id.poke_nombre);
         ln = findViewById(R.id.linear_poke);
         Intent intent = getIntent();
-        CargarPokeDatos(intent.getIntExtra("codigo_pokemon",1));
+        CargarPokeDatos(intent.getStringExtra("codigo_pokemon"));
     }
 
-    void CargarPokeDatos(int codigo){
+    void CargarPokeDatos(String codigo){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create())

@@ -1,4 +1,4 @@
-package com.example.tecsup.retrofit;
+ package com.example.tecsup.retrofit;
 
 
 
@@ -13,5 +13,5 @@ public interface InterfacePokemon {
     Call<Pokedex> obtenerPokedex(@Query("limit") int cantidad);
 
     @GET("pokemon/{codigo}/")
-    Call<Pokemon> obtenerPokemon(@Path("codigo") int codigo);
+    Call<Pokemon> obtenerPokemon(@Path("codigo") String codigo);
 }

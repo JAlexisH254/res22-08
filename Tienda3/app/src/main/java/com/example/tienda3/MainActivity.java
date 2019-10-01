@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         Interface_Categoria ic =retrofit.create(Interface_Categoria.class);
-        Call<List<Categoria>> servicio = ic.listCategorias("json");
+        Call<List<Categoria>> servicio = ic.listCategorias(1);
 
 
         servicio.enqueue(new Callback<List<Categoria>>() {
