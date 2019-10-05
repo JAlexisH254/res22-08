@@ -40,7 +40,11 @@ public class LibrosAdapter extends BaseAdapter {
         LayoutInflater inflater = LayoutInflater.from(context);
         convertView = inflater.inflate(layout,null);
         TextView tv = convertView.findViewById(R.id.ytxt_libro);
+        TextView autor = convertView.findViewById(R.id.ytxt_autor);
+        TextView isbn = convertView.findViewById(R.id.ytxt_isbn);
         tv.setText(datos.get(position).titulo);
+        autor.setText(datos.get(position).autor);
+        isbn.setText(datos.get(position).isbn);
         return convertView;
     }
 }
