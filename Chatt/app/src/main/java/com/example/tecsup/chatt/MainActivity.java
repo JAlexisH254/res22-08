@@ -1,5 +1,6 @@
 package com.example.tecsup.chatt;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 socket.emit("add user",usuario.getText().toString());
+                Intent intent = new Intent(MainActivity.this,chat.class);
+                intent.putExtra("usuario", usuario.getText().toString());
+                startActivity(intent);
             }
         });
         socket.on("login",onLogin);
